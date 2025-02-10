@@ -3,9 +3,9 @@
 import { supabase } from "../lib/supabase";
 
 const FormClient = () => {
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.target as HTMLFormElement);
     try {
       const { error } = await supabase.from("responses").insert({
         names: formData.get("name"),
@@ -13,7 +13,7 @@ const FormClient = () => {
       });
       if (error) throw error;
       console.log("Form submitted successfully!");
-      e.target.reset();
+      (e.target as HTMLFormElement).reset();
     } catch (error) {
       console.error("Error submitting form:", error);
     }
