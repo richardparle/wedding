@@ -1,8 +1,6 @@
-"use client";
-
 import { supabase } from "../lib/supabase";
 
-const FormClient = () => {
+const Form = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
@@ -50,4 +48,4 @@ const FormClient = () => {
   );
 };
 
-export default FormClient;
+export default Form;

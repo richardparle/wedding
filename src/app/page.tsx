@@ -1,14 +1,11 @@
-import Form from "@/components/Form";
 import Hotels from "@/components/Hotels";
 import Questions from "@/components/Questions";
 import Image from "next/image";
+import Link from "next/link";
 
 const Home = async () => {
   return (
     <main className="bg-greyLightest min-h-screen">
-      {/* <section className="relative w-full">
-        <Image src="/hero.jpg" alt="hero" fill objectFit="cover" />
-      </section> */}
       <section className="relative w-full">
         <Image
           src="/hero.jpg"
@@ -48,7 +45,12 @@ const Home = async () => {
       </section>
       <Questions />
       <hr />
-      <Form />
+
+      <section className="bg-brown text-greyLightest flex flex-col items-center justify-center px-12 py-36 space-y-3">
+        <Link href="/rsvp">
+          <button className="text-greyLightest border p-2">RSVP</button>
+        </Link>
+      </section>
     </main>
   );
 };
